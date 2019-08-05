@@ -28,6 +28,12 @@ class Navbar extends Component {
               App title
             </Typography>
             <Switch /> {/*gives us a toggle button to toggle theme from dark to light*/}
+            <div className={classes.grow} />
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+            </div>
           </Toolbar>
         </AppBar>
       </div>
