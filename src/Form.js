@@ -36,6 +36,14 @@ class Form extends Component {
               <InputLabel htmlFor='email'>Email</InputLabel>
               <Input id='email' name='email' autoFocus></Input>
             </FormControl>
+            <FormControl margin='normal' required fullWidth>
+              <InputLabel htmlFor='password'>Password</InputLabel>
+              <Input id='password' name='password'></Input>
+            </FormControl>
+            <FormControlLabel 
+              control={<Checkbox color='primary' />} 
+              label='remember me'
+              />
           </form>
         </Paper>
       </main>
