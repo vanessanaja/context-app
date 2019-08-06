@@ -44,6 +44,12 @@ class Form extends Component {
               control={<Checkbox color='primary' />} 
               label='remember me'
               />
+             <Button variant='contained' 
+              type='submit' 
+              fullWidth 
+              color='primary'
+              className={classes.submit}
+              >Sign In</Button> 
           </form>
         </Paper>
       </main>
