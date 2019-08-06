@@ -17,11 +17,16 @@ import styles from './styles/FormStyles';
 
 class Form extends Component {
   render() {
+    const {classes} = this.props;
     return (
       <main className={classes.name}>
-      
+        <Paper className={classes.paper}>
+          <Avatar clasName={classes.avatar}>
+            <LockOutlinedIcon/>
+          </Avatar>
+        </Paper>
       </main>
-    )
+    );
   }
 }
 
