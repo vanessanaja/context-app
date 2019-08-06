@@ -3,7 +3,7 @@ const styles = theme => ({
   display: 'block',
   marginLeft: theme.spacing.unit * 3,
   marginRight: theme.spacing.unit * 3,  
-  [theme.breakpoints.up('md')]: {
+  [theme.breakpoints.up('sm')]: {
     width: 400,
     marginLeft: 'auto',
     marginRight: 'auto',

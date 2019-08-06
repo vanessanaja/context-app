@@ -25,11 +25,11 @@ class Form extends Component {
             <LockOutlinedIcon/>
           </Avatar>
           <Typography variant='h5'>Sign In</Typography>
-          <Select>
-            <MenuItem>English</MenuItem>
-            <MenuItem>Spanish</MenuItem>
-            <MenuItem>German</MenuItem>
-            <MenuItem>Portoguese</MenuItem>
+          <Select value='english'>
+            <MenuItem value='english'>English</MenuItem>
+            <MenuItem value='spanish'>Spanish</MenuItem>
+            <MenuItem value='german'>German</MenuItem>
+            <MenuItem value='portoguese'>Portoguese</MenuItem>
           </Select>
           <form className={classes.form}>
             <FormControl margin='normal' required fullWidth>
