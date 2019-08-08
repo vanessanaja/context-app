@@ -10,13 +10,17 @@ import Switch from "@material-ui/core/Switch";
 import { withStyles } from "@material-ui/core/styles";
 import App from "./App";
 import styles from './styles/NavbarStyles';
+import {ThemeContext} from './context/ThemeContext';
 
 class Navbar extends Component {
+  static contextType = ThemeContext;// this tells the class to look up and see if it's nested
+  //inside a ThemeProvider (the nearest one of it's nested inside more than one)
   render() {
+    const {isDarkMode} = this.context;
     const {classes} = this.props;
     return (
       <div className={classes.root}>
-        <AppBar position='static' color='primary'>
+        <AppBar position='static' color={isDarkMode ? 'default' : 'primary'}>
           <Toolbar>
             <IconButton className={classes.menuButton} color='inherit' >
               <span>🇫🇷</span>

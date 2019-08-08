@@ -21,7 +21,7 @@ class Form extends Component {
     return (
       <main className={classes.name}>
         <Paper className={classes.paper}>
-          <Avatar clasName={classes.avatar}>
+          <Avatar className={classes.avatar}>
             <LockOutlinedIcon/>
           </Avatar>
           <Typography variant='h5'>Sign In</Typography>
