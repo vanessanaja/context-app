@@ -5,12 +5,12 @@ export const LanguageContext = createContext();
 export class LanguageProvider extends Component {
   constructor(props){
     super(props);
-    this.language = {language: 'french'}
+    this.state = {language: 'french'};
   }
   render(){
     return (
       <LanguageContext.Provider
-        value={{this.state.language}}
+        value={{...this.state}}
       >
         {this.props.children}
       </LanguageContext.Provider>
