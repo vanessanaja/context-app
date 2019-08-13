@@ -18,16 +18,22 @@ import { LanguageContext } from './context/LanguageContext';
 
 const words = {
   english: {
-    signIn: 'Sign In'
+    signIn: 'Sign In',
     email: 'Email Adress',
+    password: "Password",
+    remember: "Remember Me"
   },
   german: {
-    signIn: 'Einloggen'
+    signIn: 'Einloggen',
     email: 'Electronic Mail Adresse',
+    password: 'Passwort',
+    remember: 'Ehrinere mich'
   },
   spanish: {
-    signIn: 'Login'
+    signIn: 'Login',
     email: 'Correo Electornico',
+    password: "Contraseña",
+    remember: "Recuérdame"
   }
 };
 class Form extends Component {
@@ -35,19 +41,18 @@ class Form extends Component {
   render() {
     const { language } = this.context;
     const { classes } = this.props;
-    const { email } = words[language];
+    const { signIn, email, password, remember } = words[language];
     return (
       <main className={classes.name}>
         <Paper className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon/>
           </Avatar>
-          <Typography variant='h5'>Sign In</Typography>
+          <Typography variant='h5'>{signIn}</Typography>
           <Select value='english'>
             <MenuItem value='english'>English</MenuItem>
             <MenuItem value='spanish'>Spanish</MenuItem>
             <MenuItem value='german'>German</MenuItem>
-            <MenuItem value='portoguese'>Portoguese</MenuItem>
           </Select>
           <form className={classes.form}>
             <FormControl margin='normal' required fullWidth>
@@ -55,7 +60,7 @@ class Form extends Component {
               <Input id='email' name='email' autoFocus></Input>
             </FormControl>
             <FormControl margin='normal' required fullWidth>
-              <InputLabel htmlFor='password'>Password</InputLabel>
+              <InputLabel htmlFor='password'>{password}</InputLabel>
               <Input id='password' name='password'></Input>
             </FormControl>
             <FormControlLabel 
