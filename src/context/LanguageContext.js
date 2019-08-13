@@ -5,7 +5,7 @@ export const LanguageContext = createContext();
 export class LanguageProvider extends Component {
   constructor(props){
     super(props);
-    this.state = {language: 'french'};
+    this.state = {language: 'german'};
   }
   render(){
     return (
