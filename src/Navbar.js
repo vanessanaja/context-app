@@ -13,18 +13,34 @@ import styles from './styles/NavbarStyles';
 import { ThemeContext } from './context/ThemeContext';
 import { LanguageContext, withLanguageContext } from './context/LanguageContext';
 
+const content = {
+  english: {
+    search: "Search",
+    flag: "🇬🇧"
+  },
+  german: {
+    search: "Suchen",
+    flag: "🇩🇪"
+  },
+  spanish: {
+    search: "Buscar",
+    flag: "🇪🇸"
+  }
+};
 class Navbar extends Component {
   static contextType = ThemeContext;// this tells the class to look up and see if it's nested
   //inside a ThemeProvider (the nearest one of it's nested inside more than one)
   render() {
     const { isDarkMode, toggleTheme } = this.context;
     const {classes} = this.props;
+    const { language } = this.props.languageContext;
+    const { search, flag } = content[language];
     return (
           <div className={classes.root}>
           <AppBar position='static' color={isDarkMode ? 'primary' : 'default'}>
             <Toolbar>
               <IconButton className={classes.menuButton} color='inherit' >
-                <span>🇫🇷</span>
+                <span>{flag}</span>
               </IconButton>
               <Typography
                 className={classes.title}
@@ -39,7 +55,7 @@ class Navbar extends Component {
                 <div className={classes.searchIcon}>
                   <SearchIcon />
                 </div>
-                <InputBase placeholder='Search...' 
+                <InputBase placeholder={`${search}...`} 
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput
