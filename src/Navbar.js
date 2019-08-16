@@ -10,7 +10,8 @@ import Switch from "@material-ui/core/Switch";
 import { withStyles } from "@material-ui/core/styles";
 import App from "./App";
 import styles from './styles/NavbarStyles';
-import {ThemeContext} from './context/ThemeContext';
+import { ThemeContext } from './context/ThemeContext';
+import { LanguageContext, withLanguageContext } from './context/LanguageContext';
 
 class Navbar extends Component {
   static contextType = ThemeContext;// this tells the class to look up and see if it's nested
@@ -19,35 +20,36 @@ class Navbar extends Component {
     const { isDarkMode, toggleTheme } = this.context;
     const {classes} = this.props;
     return (
-      <div className={classes.root}>
-        <AppBar position='static' color={isDarkMode ? 'primary' : 'default'}>
-          <Toolbar>
-            <IconButton className={classes.menuButton} color='inherit' >
-              <span>🇫🇷</span>
-            </IconButton>
-            <Typography
-              className={classes.title}
-              variant='h6'
-              color='inherit'
-            >
-              App title
-            </Typography>
-            <Switch onChange={toggleTheme}/> {/*gives us a toggle button to toggle theme from dark to light*/}
-            <div className={classes.grow} />
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
+          <div className={classes.root}>
+          <AppBar position='static' color={isDarkMode ? 'primary' : 'default'}>
+            <Toolbar>
+              <IconButton className={classes.menuButton} color='inherit' >
+                <span>🇫🇷</span>
+              </IconButton>
+              <Typography
+                className={classes.title}
+                variant='h6'
+                color='inherit'
+              >
+                App title 
+              </Typography>
+              <Switch onChange={toggleTheme}/> {/*gives us a toggle button to toggle theme from dark to light*/}
+              <div className={classes.grow} />
+              <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+                <InputBase placeholder='Search...' 
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput
+                }}/>
               </div>
-              <InputBase placeholder='Search...' classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput
-              }}/>
-            </div>
-          </Toolbar>
-        </AppBar>
-      </div>
-    )
+            </Toolbar>
+          </AppBar>
+        </div>
+        );
+      }
   }
-}
 
-export default withStyles(styles)(Navbar);
+export default withLanguageContext(withStyles(styles)(Navbar));
